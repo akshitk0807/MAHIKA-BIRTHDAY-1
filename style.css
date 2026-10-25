@@ -3,3 +3,37 @@
 .halo {
     pointer-events: none;
 }
+
+/* =====================================
+   MAHIKA BIRTHDAY WEBSITE
+   PERMANENT BUTTON FIX
+   ===================================== */
+
+/* Decorative elements should never block clicks */
+.halo,
+.stars,
+.confetti {
+    pointer-events: none !important;
+}
+
+/* Keep all birthday buttons clickable */
+.gold-button,
+.text-button {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+/* Keep the music button accessible */
+.music-toggle {
+    position: fixed;
+    z-index: 100;
+    pointer-events: auto;
+}
+
+/* Keep the envelope interactive */
+.envelope {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+}
