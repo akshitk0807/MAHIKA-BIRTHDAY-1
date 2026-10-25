@@ -3,11 +3,11 @@ const scenes = ['intro', 'birthday', 'cakeScene', 'photosScene', 'letterScene'];
 const music = $('music');
 let musicPlaying = false;
 function showScene(id) {
-  scenes.forEach(scene => { $(scene).hidden = scene !== id; });
-  window.scrollTo({ top: 0, behavior: 'instant' });
+  scenes.forEach(scene => { const element = $(scene); if (element) element.hidden = scene !== id; });
+  window.scrollTo({ top: 0, behavior: 'auto' });
 }
 async function playMusic() {
-  try { await music.play(); musicPlaying = true; } catch (error) { musicPlaying = false; console.info('Music not available yet. Add assets/music.mp3.', error); }
+  try { if (!music) throw new Error('Audio element missing'); await music.play(); musicPlaying = true; } catch (error) { musicPlaying = false; console.warn('Music could not play. Check assets/music.mp3 and browser permissions.', error); }
   $('musicToggle').textContent = musicPlaying ? '♫ Music: On' : '♫ Music: Off';
 }
 $('beginBtn').addEventListener('click', () => {
@@ -63,3 +63,6 @@ function burstConfetti(count) {
     piece.addEventListener('animationend', () => piece.remove(), { once: true });
   }
 }
+
+// Initial state, including browsers restoring a previously visited page.
+showScene('intro');
