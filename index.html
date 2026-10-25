@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#080711" />
+  <title>For Mahika ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <audio id="music" src="assets/music.mp3" loop preload="none"></audio>
+  <button id="musicToggle" class="music-toggle" aria-label="Toggle music" hidden>♫ Music: Off</button>
+
+  <main>
+    <section id="intro" class="scene intro active" aria-label="Welcome">
+      <p class="eyebrow reveal">A little something, just for you</p>
+      <h1 class="reveal delay-1">Some people make the world<br /><em>a little brighter.</em></h1>
+      <p class="subtitle reveal delay-2">And then there's you, Mahika.</p>
+      <button id="beginBtn" class="gold-button reveal delay-3">Begin your surprise <span aria-hidden="true">✦</span></button>
+      <p class="hint reveal delay-3">Best experienced with sound on 🎵</p>
+    </section>
+
+    <section id="birthday" class="scene" aria-label="Birthday message" hidden>
+      <p class="eyebrow">Today is all about you</p>
+      <div class="halo" aria-hidden="true"></div>
+      <h2 class="hero-title">Happy Birthday<br /><span>MAHIKA</span></h2>
+      <p class="subtitle">To the friend who makes ordinary days unforgettable.</p>
+      <button id="toCakeBtn" class="gold-button">There's something more ✨</button>
+    </section>
+
+    <section id="cakeScene" class="scene" aria-label="Birthday cake" hidden>
+      <p class="eyebrow">One little wish</p>
+      <h2>Make a wish, Mahika</h2>
+      <p class="subtitle">The candles are waiting for you.</p>
+      <div class="cake" role="img" aria-label="A birthday cake with three glowing candles">
+        <div class="candles"><div class="candle"><i class="flame"></i></div><div class="candle"><i class="flame"></i></div><div class="candle"><i class="flame"></i></div></div>
+        <div class="cake-top"></div><div class="cake-body"><span>✦ &nbsp; ✦ &nbsp; ✦</span></div><div class="cake-plate"></div>
+      </div>
+      <button id="wishBtn" class="gold-button">Blow out the candles ✨</button>
+      <p id="wishMessage" class="wish-message" aria-live="polite"></p>
+      <button id="toPhotosBtn" class="text-button" hidden>See our memories →</button>
+    </section>
+
+    <section id="photosScene" class="scene gallery-scene" aria-label="Photo memories" hidden>
+      <p class="eyebrow">A few moments worth keeping</p>
+      <h2>Our little collection of memories</h2>
+      <p class="subtitle">Every photo tells a story. Here are a few of ours.</p>
+      <div class="gallery">
+        <figure><div class="photo"><img src="assets/photo1.jpg" alt="Memory one" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('missing')" /></div><figcaption>That unforgettable day ✨</figcaption></figure>
+        <figure><div class="photo"><img src="assets/photo2.jpg" alt="Memory two" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('missing')" /></div><figcaption>Our favorite kind of chaos ♡</figcaption></figure>
+        <figure><div class="photo"><img src="assets/photo3.jpg" alt="Memory three" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('missing')" /></div><figcaption>More moments like these, please</figcaption></figure>
+      </div>
+      <button id="toLetterBtn" class="gold-button">One last surprise 💌</button>
+    </section>
+
+    <section id="letterScene" class="scene letter-scene" aria-label="Birthday letter" hidden>
+      <p class="eyebrow">Some words are worth keeping</p>
+      <h2>A letter for you</h2>
+      <button id="envelopeBtn" class="envelope" aria-label="Open your birthday letter"><span class="envelope-flap"></span><span class="envelope-seal">✦</span></button>
+      <p id="envelopeHint" class="subtitle">Tap the envelope to open it.</p>
+      <article id="letter" class="letter" hidden tabindex="-1">
+        <h3>Dear Mahika,</h3>
+        <p>Happy birthday to one of the most wonderful people I know.</p>
+        <p>I wanted to make something a little different this year. Not just a message that disappears into a chat, but a little place you can come back to whenever you want to remember how appreciated you are.</p>
+        <p>Thank you for the laughs, the random conversations, the memories, and for being the kind of friend who makes even ordinary moments feel special.</p>
+        <p>I hope this year brings you unexpected happiness, exciting adventures, people who truly value you, and so many reasons to smile.</p>
+        <p>Keep being yourself. The world is genuinely brighter with you in it.</p>
+        <p class="signature">With lots of appreciation,<br />Your best friend ✨</p>
+      </article>
+      <button id="restartBtn" class="text-button" hidden>Experience it again ↺</button>
+    </section>
+  </main>
+  <div id="confetti" class="confetti" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
