@@ -8,10 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
-  <div class="stars" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div><div class="shooting-stars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   <audio id="music" src="assets/music.mp3" loop preload="none"></audio>
   <button id="musicToggle" class="music-toggle" aria-label="Toggle music" hidden>♫ Music: Off</button>
 
@@ -22,6 +22,12 @@
       <p class="subtitle reveal delay-2">And then there's you, Mahika.</p>
       <button id="beginBtn" class="gold-button reveal delay-3">Begin your surprise <span aria-hidden="true">✦</span></button>
       <p class="hint reveal delay-3">Best experienced with sound on 🎵</p>
+    </section>
+
+    <section id="countdownScene" class="scene" aria-label="Countdown" hidden>
+      <p class="eyebrow">A little magic is on its way</p>
+      <div id="countdownNumber" class="countdown-number" aria-live="polite">3</div>
+      <p id="typewriter" class="typewriter" aria-live="polite"></p>
     </section>
 
     <section id="birthday" class="scene" aria-label="Birthday message" hidden>
@@ -45,16 +51,21 @@
       <button id="toPhotosBtn" class="text-button" hidden>See our memories →</button>
     </section>
 
-    <section id="photosScene" class="scene gallery-scene" aria-label="Photo memories" hidden>
-      <p class="eyebrow">A few moments worth keeping</p>
-      <h2>Our little collection of memories</h2>
-      <p class="subtitle">Every photo tells a story. Here are a few of ours.</p>
-      <div class="gallery">
-        <figure><div class="photo"><img src="assets/photo1.jpg" alt="Memory one" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('missing')" /></div><figcaption>That unforgettable day ✨</figcaption></figure>
-        <figure><div class="photo"><img src="assets/photo2.jpg" alt="Memory two" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('missing')" /></div><figcaption>Our favorite kind of chaos ♡</figcaption></figure>
-        <figure><div class="photo"><img src="assets/photo3.jpg" alt="Memory three" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('missing')" /></div><figcaption>More moments like these, please</figcaption></figure>
+    <section id="photosScene" class="scene memories-scene" aria-label="24 photo memories" hidden>
+      <p class="eyebrow">A little collection of us</p>
+      <h2>24 moments worth keeping</h2>
+      <p class="subtitle">Every memory has a little magic of its own.</p>
+      <div class="memory-viewer">
+        <div class="memory-photo-wrap" id="memoryPhotoWrap"><img id="memoryImage" src="assets/photo1.jpg" alt="Memory 1" /></div>
+        <p id="memoryCaption" class="memory-caption"></p>
+        <p id="memoryCounter" class="memory-counter">01 / 24</p>
+        <div class="memory-progress"><div id="memoryProgress"></div></div>
+        <div class="memory-controls">
+          <button id="prevMemoryBtn" class="text-button" type="button">← Previous</button>
+          <button id="nextMemoryBtn" class="gold-button" type="button">Next memory →</button>
+        </div>
       </div>
-      <button id="toLetterBtn" class="gold-button">One last surprise 💌</button>
+      <button id="toLetterBtn" class="text-button" type="button">Continue to your letter 💌</button>
     </section>
 
     <section id="letterScene" class="scene letter-scene" aria-label="Birthday letter" hidden>
@@ -71,10 +82,18 @@
         <p>Keep being yourself. The world is genuinely brighter with you in it.</p>
         <p class="signature">With lots of appreciation,<br />Your best friend ✨</p>
       </article>
-      <button id="restartBtn" class="text-button" hidden>Experience it again ↺</button>
+      <button id="toFinaleBtn" class="gold-button" hidden>One final surprise ✨</button>
+    </section>
+
+    <section id="finaleScene" class="scene finale-scene" aria-label="Grand finale" hidden>
+      <p class="eyebrow">And one last thing...</p>
+      <div class="finale-glow" aria-hidden="true">✦</div>
+      <h2 class="finale-title">The world is brighter<br/>with you in it, <em>Mahika.</em></h2>
+      <p class="subtitle">Here's to more laughter, more adventures, and a thousand little moments worth remembering. Happy Birthday! ♡</p>
+      <button id="restartBtn" class="gold-button" type="button">Experience it again ↺</button>
     </section>
   </main>
   <div id="confetti" class="confetti" aria-hidden="true"></div>
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
